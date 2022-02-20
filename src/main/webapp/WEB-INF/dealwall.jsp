@@ -67,7 +67,7 @@
 			<div id="wrapperShareViews">	
 									<p>Number of Comic Collectors who have liked this Post: <c:out value="${share.seens.size()}"/></p>	
 			</div>
-	<br>
+	<br><br>
 				<div id="indexFooter">
 					<div id=wrapper10>
 				<h5>CONTACT:</h5>

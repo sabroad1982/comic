@@ -12,12 +12,14 @@ body{
 	margin: auto;
 }
 #errors{
-	width: 525px;
+	width: 270px;
 	text-align: center;
 	padding: 0px 30px 0px 45px;
 	background-color: white;
 	border-radius: 15px;
 	font-weight: bold;
+	margin:auto;
+	
 }
 
 #errorsShare{
@@ -109,8 +111,9 @@ body{
 	display: block;
 	height: 363px;
 	width: 725px;
-	padding: 15px 0px 0px 185px;
+	padding: 15px 0px 0px 145px;
 	font-family: monospace;
+	font-size: 14px;
 }
 #wrapperTalk{
 	

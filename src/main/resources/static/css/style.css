@@ -1,8 +1,6 @@
 @charset "ISO-8859-1";
 
 h1{ 
-	
-	 
 	font-weight: normal; 
 	text-shadow: 2px 2px 0 #000, margin 10px 0 24px; 
 	text-align: center; 
@@ -19,9 +17,7 @@ body{
 	border-radius: 15px;
 	font-weight: bold;
 	margin:auto;
-	
 }
-
 #errorsShare{
 	width: 690px;
 	text-align: center;
@@ -29,8 +25,6 @@ body{
 	border-radius: 15px;
 	display: block;
 }
-
-
 #page{
     width: 1500px;
     margin: 0 auto;
@@ -40,7 +34,6 @@ body{
     -webkit-border-radius: 5px;
     border-radius: 5px;
     font-family: sans-serif;
-    
 }
 #pageIndex{
     width: 1500px;
@@ -51,9 +44,7 @@ body{
     -webkit-border-radius: 5px;
     border-radius: 5px;
     font-family: sans-serif;
-    
 }
-
 #wrapperWallTop{
     width: 1450px;
     height: 60px;
@@ -63,7 +54,6 @@ body{
     border-radius: 15px;
     background-image: url("/images/header.png");
     background-size: 750px;
-    
     text-align: right;
     font-size: 40px;  
 }
@@ -78,11 +68,6 @@ body{
     font-size: 40px;  
     text-align: right;
 }
-
-
-
-
-
 #wrapperDealWallTop{
     width: 1450px;
     border: 5px solid black;
@@ -103,27 +88,22 @@ body{
     border-radius: 5px;
     text-align: center;
     color: white;
-   
 }
 #wrapperSaid{
-	
 	text-align:left;
 	display: block;
 	height: 363px;
 	width: 725px;
 	padding: 15px 0px 0px 145px;
 	font-family: monospace;
-	font-size: 14px;
+	font-size: 13px;
 }
 #wrapperTalk{
-	
 	display: block;
 	height: 230px;
 	width: 820px;
 	padding: 0px 0px 0px 515px;
-	
 }
-
 #wrapperWallShare{
     width: 1450px;
     height: 360px;
@@ -132,37 +112,27 @@ body{
     border-radius: 5px;
     background-size: 1500px;
     background-image: url("/images/share5.png");
-    text-align: center;
-    
-    
+    text-align: center;  
 }
 #wrapperWallDeal{
     width: 1450px;
-    
     border: 5px solid black;
-    
     padding: 0px 0px 0px 40px;
     border-radius: 5px;
     background-size: cover;
     background-image: url("/images/deals2.png");
     background-color:white;
-    text-align: center;
-    
-    
+    text-align: center; 
 }
 #wrapperWallShowShare{
     width: 1440px;
-    
     border: 5px solid black;
     margin: 0px;
     padding: 0px 25px 0px 25px;
     border-radius: 5px;
     text-align: center;
     display: grid;
-    background-image: url("/images/comictile1.png");
-    
-    
-    
+    background-image: url("/images/comictile1.png");   
 }
 #wrapperWallShowDeal{
     width: 1450px;
@@ -175,17 +145,14 @@ body{
     display: grid;     
     margin-right: auto;
 }
-
 #wrapperShareViews{
     width: 1450px; 
     height: 10px;   
     padding: 0px;
     border-radius: 5px;
     color: white;
-    text-align: center;
-    
+    text-align: center;   
 }
-
 #wrapper1{
     width: 860px;
     height: 515px;
@@ -197,7 +164,6 @@ body{
     vertical-align:top;
     font-size: 20px;   
 }
-
 #wrapper2{
     width: 697px;
     height: 440px;
@@ -208,8 +174,7 @@ body{
     vertical-align:top;  
     text-align: center;
     background-image: url("/images/reg1.png");
-    background-size: cover;
-    
+    background-size: cover;   
 }
 #wrapper3{
 	width: 150px;
@@ -219,7 +184,6 @@ body{
 #wrapper4{
 	padding: 15px 0px 0px 565px;
 }
-
 #wrapper5{
 	width: 435px;
 	height: 315px;
@@ -258,7 +222,6 @@ body{
 	text-align: center;
 	padding: 0px 0px 0px 0px;
 }
-
 #profileWallTop{
     width: 1450px;
     border: 5px solid black;
@@ -281,11 +244,8 @@ body{
     text-align: center;
     font-size: 26px;
     height: 120px;
-    font-family: cursive;
-    
-    
+    font-family: cursive;  
 }
-
 #profileInfo{
 	width: 850px;
 	border: 5px solid black;
@@ -295,7 +255,6 @@ body{
 	margin: inherit;
 	font-family: courier;
 }
-
 #login1{
     width: 697px;
     height: 440px;
@@ -308,10 +267,7 @@ body{
     background-image: url("/images/login3.png");
     background-size: cover;
     background-repeat: round;
-    
-   
 }
-
 #indexWrapper1{
     width: 1390px;
     height: 140px;
@@ -367,7 +323,6 @@ body{
 }
 #viewProfileInfo{
     width: 1385px;
-    
     border: 5px solid black;
     margin:auto;
     padding: 0px 50px 20px 50px;
@@ -375,12 +330,11 @@ body{
     background-image: url("/images/editbackground1.png");
     background-size: 1490px;
     font-family: sans-serif;
-    font-size: 20px;
-    	
+    font-size: 20px; 	
 }
 #editProfileInfo{
     width: 1390px;
-    height: 325px;
+    height: 315px;
     border: 5px solid black;
     margin:0px;
     padding: 38px 50px 100px 50px;
@@ -388,18 +342,14 @@ body{
 	background-image: url("/images/edit2.png");
 	background-size: cover;
     font-family: sans-serif;
-    font-size: 20px;
-    	
+    font-size: 20px;   	
 }
-
 #editProfileWrapper{
 	width: 450px;
 	text-align: left;
 	padding: 3px 0px 0px 0px;
-	font-family: courier;
-	
+	font-family: courier;	
 }
-
 .button:hover {
     background-color: #3c3d40;
     border: none;
@@ -433,9 +383,6 @@ body{
 .button1 {
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     }
-    
-    
-
 hr.rounded {
   border-top: 8px solid black;
   border-radius: 5px;
@@ -460,10 +407,8 @@ hr.rounded {
     border:solid black 10px;
     text-align: center;
     font-family: cursive;
-    color: white;
-    
+    color: white;   
 }
-
 .styled-table td {
 	padding: 15px 35px;
     border:solid black 2px;
@@ -475,7 +420,6 @@ hr.rounded {
     font-weight: bold;
 	background: #242526;
 	color: white;
-
 }
 tr:nth-child(even) {background-color: #303031;}
 

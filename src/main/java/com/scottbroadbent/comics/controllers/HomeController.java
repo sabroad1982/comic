@@ -59,6 +59,7 @@ public class HomeController {
 		return "index.jsp";
 	}
 	
+	
 	@PostMapping("/registration")
 	public String registerCollector(@Valid @ModelAttribute("collector") Collector collector, BindingResult result, HttpSession session) {
 		collectorValidator.validate(collector, result);
@@ -72,6 +73,7 @@ public class HomeController {
 		}
 	}
 	
+	
 	@PostMapping("/login")
 	public String loginCollector(@RequestParam("email") String email, @RequestParam("password") String password, Model model, HttpSession session, RedirectAttributes redirectAttributes) {
 		if(collectorService.authenticateCollector(email, password)) {
@@ -84,13 +86,23 @@ public class HomeController {
 		return "redirect:/";
 	}
 	}
+	
+	
 	@GetMapping("/collector/edit/{id}")
 	private String edit(@Valid @PathVariable("id") Long id, @ModelAttribute("editedCollector") Collector collector,Model model, HttpSession session) {
+		if(session.getAttribute("collectorId") !=null) {
 		Collector editCollector=collectorService.findCollectorById(id);
+		Collector collector1=collectorService.findCollectorById((Long) session.getAttribute("collectorId"));
+		model.addAttribute("collector", collector1);
+		session.setAttribute("collectorId", collector1.getId());
+		session.setAttribute("collector", collector1.getId());
 		model.addAttribute("editCollector", editCollector);
 		model.addAttribute("collector",collector);
 		model.addAttribute("collectorId", collector.getId());
+		model.addAttribute("collectorLoggedIn",(Long)session.getAttribute("collectorId"));
 		return "edit.jsp";
+	}
+		return "redirect:/home";
 	}
 	
 	
@@ -124,6 +136,7 @@ public class HomeController {
 		return "redirect:/home";
 	}
 	
+	
 	@GetMapping("/collector/{collectorId}")
 	public String profile(@PathVariable("collectorId") Long id,Share share, Collector collector, Model model, HttpSession session) {
 		Collector collector2=collectorService.findCollectorById((id));
@@ -138,6 +151,7 @@ public class HomeController {
 		return "profile.jsp";
 	}
 	
+	
 	@GetMapping("/collector/user")
 	public String profileHome(Share share, Collector collector, Model model, HttpSession session) {
 		Collector collector1=collectorService.findCollectorById((Long) session.getAttribute("collectorId"));
@@ -150,6 +164,7 @@ public class HomeController {
 		return "profile.jsp";
 	}
 	
+	
 	@PostMapping("/share/create")
 	public String create(@Valid @ModelAttribute("newShare") Share share, BindingResult result,HttpSession session,Collector collector) {
 		if (result.hasErrors()) {
@@ -160,6 +175,7 @@ public class HomeController {
 			return "redirect:/home";
 		}
 	}
+	
 	
 	@PostMapping("/{shareId}/deal/create")
 	public String createDeal(@Valid @ModelAttribute("newDeal") Deal deal, BindingResult result, HttpSession session,@PathVariable("shareId") Long shareId, Collector collector, Model model) {
@@ -181,11 +197,13 @@ public class HomeController {
 		}
 	}
 	
+	
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:/";
 	}
+	
 	
 	@GetMapping("/deal/{shareId}")
 	public String theDealDashboard(@PathVariable("shareId") Long shareId, @ModelAttribute("newDeal") Deal theDeal,  Collector collector, Model model, HttpSession session,BindingResult result) {
@@ -202,6 +220,7 @@ public class HomeController {
 		session.setAttribute("share",share.getId());
 		return "dealwall.jsp";
 	}
+	
 	
 	@GetMapping("/{collectorId}/share/{shareId}")
 	public String LetMakeADeal(@PathVariable("shareId") Long shareId, @ModelAttribute("newDeal") Deal theDeal, Collector collector, Model model, HttpSession session, BindingResult result) {
@@ -227,6 +246,7 @@ public class HomeController {
 		return "comicwall.jsp";
 	}
 	
+	
 	@GetMapping("/share/delete/{collectorId}/{shareId}")
 	private String deleteTheShare(@PathVariable("shareId") Long shareId, Share share, Collector collector, Deal deal, Model model) {
 		if (deal != null) {
@@ -237,6 +257,7 @@ public class HomeController {
 		return "redirect:/home";
 		}
 	}
+	
 	
 	@GetMapping("/share/delete/{shareId}")
 	private String deleteShare(@PathVariable("shareId") Long shareId, Share share, Collector collector, Deal deal, Model model) {
@@ -251,6 +272,7 @@ public class HomeController {
 		}
 	}
 
+	
 	@GetMapping("/deal/delete/{collectorId}/{shareId}/{id}")
 	private String deleteDeal(@PathVariable("id") Long id, Collector collector, Share share, Model model) {
 		dealService.deleteDeal(id);
@@ -259,10 +281,12 @@ public class HomeController {
 		return "redirect:/home";
 	}
 	
+	
 	@GetMapping("/deal/new")
 	public String Deal(@ModelAttribute("newDeal") Deal deal) {
 		return "dealwall.jsp";
 	}
+	
 	
 	@GetMapping("/shares/seen/{shareId}")
 	public String Share(@PathVariable("shareId") Long shareId, HttpSession session) {
@@ -283,6 +307,7 @@ public class HomeController {
 		return "redirect:/home";
 	}
 
+	
 	@GetMapping("/{shareId}/deal")
 	public String dealDashboard(@ModelAttribute("newDeal") @PathVariable("id") Long shareId, Deal theDeal,  Share share, Collector collector, Model model, HttpSession session, BindingResult result) {
 		Share share1 = shareService.getOneShare(shareId);
@@ -299,6 +324,7 @@ public class HomeController {
 		return "dealwall.jsp";
 	}
 
+	
 	@GetMapping("/collector/share/{dealId}")
 	public String dealDeal(@PathVariable("id") Long dealId, @ModelAttribute("newDeal") Deal deal,  Collector collector, Model model, HttpSession session) {
 		List<Deal> deals = this.dealService.allDeals();
@@ -315,7 +341,4 @@ public class HomeController {
 		return "dealwall.jsp";
 		
 	}
-
-	
-	
 }

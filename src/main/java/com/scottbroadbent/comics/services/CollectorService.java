@@ -1,12 +1,10 @@
 package com.scottbroadbent.comics.services;
 
-import java.util.List;
+
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
 import com.scottbroadbent.comics.models.Collector;
 import com.scottbroadbent.comics.repositories.CollectorRepository;
 
@@ -24,16 +22,19 @@ public class CollectorService {
         return collectorRepository.save(collector);
     }
     
+    
     // find user by email
     public Collector findByEmail(String email) {
         return collectorRepository.findByEmail(email);
     }
+    
     
     // find user by id
     public Collector findCollectorById(Long id) {
     	return collectorRepository.findById(id).orElse(null);
 
     }
+    
     
     // authenticate user
     public boolean authenticateCollector(String email, String password) {
@@ -52,6 +53,7 @@ public class CollectorService {
 		return collectorRepository.findById(id).orElse(null);
 	}
     
+	
     //update user
 	public Collector updateCollector(Long id, String firstName, String lastName, String email, String state, String fav, String password, String passwordConfirmation) {
 		Collector collector = getOneCollector(id);
@@ -64,7 +66,4 @@ public class CollectorService {
 		collector.setPasswordConfirmation(passwordConfirmation);
 		return collectorRepository.save(collector);
 	}
-
-	
-
 }

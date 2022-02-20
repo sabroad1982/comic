@@ -19,7 +19,7 @@
 		<div id="wrapperWallDeal">
 			<form:form action="/${share.id}/deal/create" method="post" modelAttribute="newDeal">
 				<div id="wrapperSaid"><br>
-									<h3> What <c:out value="${share.collector.firstName}"/> Said:</h3><h3><c:out value="${share.share}"/>
+									<h3>Post-<c:out value="${share.id}"/>- What <c:out value="${share.collector.firstName}"/> Said:</h3><h3><c:out value="${share.share}"/>
 									<c:if test="${share.collector.id==collectorLoggedIn}"><br>
 									<a class="button button1" href="/share/delete/${share.id}">Delete</a>
 									</c:if></h3>

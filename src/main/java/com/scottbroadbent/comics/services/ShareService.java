@@ -3,9 +3,7 @@ package com.scottbroadbent.comics.services;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.scottbroadbent.comics.models.Collector;
-import com.scottbroadbent.comics.models.Deal;
 import com.scottbroadbent.comics.models.Share;
 import com.scottbroadbent.comics.repositories.ShareRepository;
 

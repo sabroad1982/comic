@@ -10,9 +10,6 @@
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-
-
-
 <div id="page"><br>
 <div id="indexWrapper2" style="position: fixed; top: 0px;">
 	<a class="button button1" href="/home">Comic Wall</a>

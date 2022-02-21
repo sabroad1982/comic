@@ -52,7 +52,7 @@
 				<c:forEach items="${deals}" var="deal">
 					<tr class="active-row">
 					<c:if test= "${share.id==deal.share.id }">
-								<td><h1><c:out value="${deal.collector.id}"/></h1><h3><c:out value="${collector.email }"/></h3></td>
+								<td><h1><c:out value="${deal.collector.id}"/></h1><h3><c:out value="${deal.collector.email }"/></h3></td>
 							<td><a class="button button1" href="/collector/${deal.collector.id}"><c:out value="${deal.collector.firstName}"/></a></td>
 												<td><h3><c:out value="${deal.collector.firstName }"/> <c:out value="${deal.collector.lastName }"/>'s Deal Comments:<br><c:out value="${deal.deal }"/></h3>
 															<c:if test="${deal.collector.id==collectorLoggedIn}">

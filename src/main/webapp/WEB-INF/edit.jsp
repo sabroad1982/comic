@@ -24,6 +24,7 @@
 			<div id="editProfileInfo"><br>
 				<form:form action="/collector/update/${editCollector.id}" method="post" modelAttribute="editedCollector">
 				<div id="editProfileWrapper">
+				<c:if test="${collectorLoggedIn==editCollector.id}">
 			<h3>
 				<form:label path="firstName">First Name:</form:label>
 				<form:input path="firstName" size="38px" placeholder= "Can't be blank" value="${editCollector.firstName}"/>	
@@ -52,8 +53,11 @@
 				<form:label path="passwordConfirmation"></form:label>
 				<form:input type="hidden" path="passwordConfirmation" value="${editCollector.password}"/>
 			</h3>
+				
 			<button class="button button1" type="submit" value="Submit">Update</button>
-			<a href="/home"><button class="button button1" value="Cancel">Cancel</button></a>
+			<a href="/home"><button class="button button1" value="Cancel">Cancel</button></a><br>
+				<h3><form:errors path="fav"/><form:errors path="state"/><form:errors path="email"/><form:errors path="lastName"/><form:errors path="firstName"/></h3>	
+				</c:if>
 				</div><br><br>
 			</form:form>
 			</div>

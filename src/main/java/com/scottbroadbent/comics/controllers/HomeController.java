@@ -43,10 +43,6 @@ public class HomeController {
 	@Autowired
 	private CollectorValidator collectorValidator;
 	
-	
-	
-	
-	
 	public HomeController(CollectorService collectorService, CollectorValidator collectorValidator, ShareService shareService) {
 		this.collectorService= collectorService;
 		this.collectorValidator=collectorValidator;
@@ -94,20 +90,18 @@ public class HomeController {
 		Collector editCollector=collectorService.findCollectorById(id);
 		Collector collector1=collectorService.findCollectorById((Long) session.getAttribute("collectorId"));
 		model.addAttribute("collector", collector1);
-		session.setAttribute("collectorId", collector1.getId());
-		session.setAttribute("collector", collector1.getId());
 		model.addAttribute("editCollector", editCollector);
-		model.addAttribute("collector",collector);
-		model.addAttribute("collectorId", collector.getId());
 		model.addAttribute("collectorLoggedIn",(Long)session.getAttribute("collectorId"));
 		return "edit.jsp";
-	}
+	} else {
 		return "redirect:/home";
+	}
 	}
 	
 	
 	@PostMapping("/collector/update/{id}")
 	public String update(@PathVariable("id") Long id, @Valid @ModelAttribute("editedCollector") Collector collector, BindingResult result, Model model) {
+		
 		if (result.hasErrors()) {
 			Collector editCollector=collectorService.findCollectorById(id);
 			model.addAttribute("editCollector", editCollector);

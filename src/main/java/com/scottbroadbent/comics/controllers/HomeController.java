@@ -100,13 +100,13 @@ public class HomeController {
 	
 	
 	@PostMapping("/collector/update/{id}")
-	public String update(@PathVariable("id") Long id, @Valid @ModelAttribute("editedCollector") Collector collector, BindingResult result, Model model) {
-		
+	public String update(@PathVariable("id") Long id, @Valid @ModelAttribute("editedCollector") Collector collector, BindingResult result, Model model, HttpSession session) {
 		if (result.hasErrors()) {
 			Collector editCollector=collectorService.findCollectorById(id);
 			model.addAttribute("editCollector", editCollector);
 			model.addAttribute("collector",collector);
 			model.addAttribute("collectorId", collector.getId());
+			model.addAttribute("collectorLoggedIn",(Long)session.getAttribute("collectorId"));
 			return "edit.jsp";
 		} else {
 			Collector newCollector = collectorService.updateCollector(id, collector.getFirstName(), collector.getLastName(), collector.getEmail(),collector.getState(),collector.getFav(),collector.getPassword(),collector.getPasswordConfirmation());

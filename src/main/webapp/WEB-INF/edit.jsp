@@ -53,11 +53,10 @@
 				<form:label path="passwordConfirmation"></form:label>
 				<form:input type="hidden" path="passwordConfirmation" value="${editCollector.password}"/>
 			</h3>
-				
 			<button class="button button1" type="submit" value="Submit">Update</button>
-			<a href="/home"><button class="button button1" value="Cancel">Cancel</button></a><br>
-				<h3><form:errors path="fav"/><form:errors path="state"/><form:errors path="email"/><form:errors path="lastName"/><form:errors path="firstName"/></h3>	
-				</c:if>
+			<a href="/home"><button class="button button1" value="Cancel">Cancel</button></a>
+				</c:if><br>
+				<h3><form:errors path="fav"/><form:errors path="state"/><form:errors path="email"/><form:errors path="lastName"/><form:errors path="firstName"/></h3>
 				</div><br><br>
 			</form:form>
 			</div>

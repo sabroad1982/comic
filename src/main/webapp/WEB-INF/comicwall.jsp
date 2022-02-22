@@ -36,8 +36,8 @@
 								<thead>
 								      <tr>
 								        <th><h2>Post ID:</h2></th>
-								        <th><h2>Proflie:</h2></th>
-								        <th><h2>Posts:</h2></th>
+								        <th><h2>Profile:</h2></th>
+								        <th><h2>Posts: Click Post ID to make a Deal</h2></th>
 								        <th><h2># likes:</h2></th>
 				     				 </tr>
 				    			</thead>

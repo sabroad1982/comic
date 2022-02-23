@@ -21,7 +21,7 @@
 				<input type="text" id="email" name="email" style="width: 250px;"/>
 			</h3>
 			<h3>
-				<label for="password">PW:</label>
+				<label for="password">Password:</label>
 				<input type="password" id="password" name="password" style="width: 250px;"/>
 				<br>
 			</h3>

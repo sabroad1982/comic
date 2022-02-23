@@ -69,7 +69,7 @@
 	<br><br>
 		<div id="indexFooter">
 			<div id=wrapper10>
-				<h5>CONTACT:</h5>
+				<h5>Contact:</h5>
 					<p>1803 W Golf Rd. <br>
 					Mount Prospect IL 60056 <br>
 					847-483-4789 <br>
